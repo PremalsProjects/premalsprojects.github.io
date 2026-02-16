@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Archive of all daily market briefings from The Basis Point">
+    <title>Archive | The Basis Point</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-main">THE BASIS POINT</span>
+                    <span class="logo-tagline">Daily Market Intelligence</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="archive.html" class="active">Archive</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Briefing Archive</h1>
+            <p>Complete collection of daily market intelligence reports</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="archive-filters">
+            <div class="filter-group">
+                <label for="search">Search briefings:</label>
+                <input type="text" id="search" placeholder="Search by topic, date, or keyword..." onkeyup="filterBriefings()">
+            </div>
+        </section>
+
+        <section class="archive-list">
+            <h2 class="archive-month">February 2026</h2>
+            
+            <div class="briefings-grid" id="briefings-container">
+                <article class="briefing-card archive-item" data-date="2026-02-16" data-keywords="cpi inflation fed rates june cut schroders nuveen ai disruption">
+                    <div class="card-date-compact">
+                        <span class="date-number">16</span>
+                        <span class="date-month">Feb</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>CPI Drops to 2.4% - Markets Price 83% Odds of June Cut</h3>
+                        <div class="card-tags">
+                            <span class="tag">Inflation</span>
+                            <span class="tag">Fed Policy</span>
+                            <span class="tag">M&A</span>
+                            <span class="tag">AI Disruption</span>
+                        </div>
+                        <p class="card-excerpt">Friday's benign CPI print was the catalyst that shifted market expectations dramatically. In 48 hours, markets went from "Fed might cut once" to "Fed probably cuts three times." Complete breakdown of the reaction chain, Schroders £9.9B acquisition, and AI disruption sector rotation.</p>
+                        
+                        <div class="card-highlights-compact">
+                            <span class="highlight-item-compact"><strong>CPI:</strong> 2.4% ↓</span>
+                            <span class="highlight-item-compact"><strong>June Cut:</strong> 83%</span>
+                            <span class="highlight-item-compact"><strong>10Y:</strong> 4.11%</span>
+                        </div>
+
+                        <div class="card-footer-compact">
+                            <a href="briefings/Daily_Finance_Briefing_Feb16_2026.docx" class="btn btn-sm" download>Download</a>
+                            <span class="file-meta">DOCX • 12 pages</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Placeholder for upcoming briefings -->
+                <div class="coming-soon-card">
+                    <div class="coming-soon-icon">📅</div>
+                    <h3>Daily Briefings Coming</h3>
+                    <p>New comprehensive market analysis added every trading day. Covering macro drivers, sector rotations, and institutional insights.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Stats -->
+        <section class="archive-stats">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Briefings Published</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Days Per Week</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Pages Average</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Macro Drivers Tracked</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>The Basis Point</h3>
+                    <p>Daily market intelligence compiled from Financial Times, Bloomberg, Wall Street Journal, BLS data, CME FedWatch, Goldman Sachs research, and institutional market commentary.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="archive.html">Archive</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Disclaimer</h4>
+                    <p class="disclaimer">This site is for educational purposes only. Not investment advice. All analysis represents personal research and learning. Always do your own due diligence.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Basis Point. Built by <a href="https://github.com/PremalsProjects" target="_blank" rel="noopener">PremalsProjects</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function filterBriefings() {
+            const searchTerm = document.getElementById('search').value.toLowerCase();
+            const briefings = document.querySelectorAll('.archive-item');
+            
+            briefings.forEach(briefing => {
+                const keywords = briefing.dataset.keywords.toLowerCase();
+                const title = briefing.querySelector('h3').textContent.toLowerCase();
+                const excerpt = briefing.querySelector('.card-excerpt').textContent.toLowerCase();
+                
+                if (keywords.includes(searchTerm) || title.includes(searchTerm) || excerpt.includes(searchTerm)) {
+                    briefing.style.display = 'flex';
+                } else {
+                    briefing.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
